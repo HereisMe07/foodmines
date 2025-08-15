@@ -25,4 +25,46 @@ li a{
     margin: 1rem;
     border-radius: 1rem;
     border: 1px solid #ccc;
+    overflow: hidden;
+    color: #e72929;
+}
+
+li a:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+li a img{
+    object-fit: cover;
+    height: 13rem;
+}
+
+.content{
+    margin-top: 0.3rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    height: 7rem;
+}
+
+.favorite{
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.stars{
+    margin-bottom: 0.2rem;
+}
+
+.product-item-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.origins{
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.5rem;
 }
