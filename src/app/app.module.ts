@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AllStudentComponent } from './all-student/all-student.component';
-import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/partials/header/header.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AllStudentComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, // Required for browser rendering
+    RouterModule.forRoot([]), // Add your routes here
     AppRoutingModule,
-    HttpClientModule
+    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] // Tells Angular to load AppComponent first
 })
-export class AppModule { }
+export class AppModule {}

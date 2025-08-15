@@ -1,0 +1,28 @@
+span {
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+}
+
+span.filled {
+  color: red;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 5;
+}
+
+li a{
+    height: 22.5rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+}
