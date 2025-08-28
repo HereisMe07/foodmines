@@ -1,0 +1,14 @@
+.container {
+  display:flex;
+  justify-content:center;
+  align-items: center;;
+}
+
+.stars span {
+  cursor: pointer;
+  font-size: 24px;
+  color: lightgray;
+}
+.stars span.filled {
+  color: red;
+}

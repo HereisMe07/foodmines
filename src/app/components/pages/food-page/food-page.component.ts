@@ -11,9 +11,17 @@ import { Food } from 'src/app/shared/models/food';
 export class FoodPageComponent implements OnInit {
   food!: Food;
   // ActivatedRoute to read Food ID from the route Bar
-  constructor(activatedRoute:ActivatedRoute,foodService:FoodService) { }
+  constructor(activatedRoute: ActivatedRoute, foodService: FoodService) { 
+    activatedRoute.params.subscribe((params) => {
+      if (params.id)
+        this.food = foodService.getFoodById(params.id);
+    })
+  }
 
   ngOnInit(): void {
   }
 
+  selectRating(star: number) {
+    this.food.stars = star;
+  }
 }
