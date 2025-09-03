@@ -24,22 +24,8 @@ export class CartService {
     this.cart.items.push(new CartItem(food));
   }
 
-// Remove from cart (we remove this food id from the cart items)
+// Remove from cart 
   removeFromeCart(foodId: string):void{
-   
-  }
-
-// Method to change the quantity of the food item in the cart
-  changeQuantity(foodId: string, quantity: number) {
-    // Find the cart item with the specified foodId
-    let cartItem = this.cart.items.find(item => item.food.id === foodId);
-    // If the cart item exists, update its quantity
-    // if (cartItem) {
-    //   cartItem.quantity = quantity;
-    // }
-    // If the quantity is not available then we return not error not compaliced
-    if (!cartItem) return; 
-      
     
   }
 }
