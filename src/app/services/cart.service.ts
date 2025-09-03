@@ -8,7 +8,7 @@ import { CartItem } from '../shared/models/cartitem';
   providedIn: 'root'
 })
 export class CartService {
-  private cart:Cart = new Cart();
+  private cart: Cart = this.getCartFromLocalStorage();
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
   constructor() { }
 // Find the cart item 
@@ -22,11 +22,14 @@ export class CartService {
     }
     //Push new part item to the cart
     this.cart.items.push(new CartItem(food));
+    this.getCartFromLocalStorage();
   }
 
 // Remove from cart 
   removeFromeCart(foodId: string):void{
-    this.cart.items = this.cart.items.filter(item => item.food.id !== foodId);
+    this.cart.items = this.cart.items
+      .filter(item => item.food.id !== foodId);
+      this.getCartFromLocalStorage();
   }
 
 // Change quantity
@@ -39,10 +42,12 @@ export class CartService {
     cartItem.quantity = quantity;
     // Calculate the total price
     cartItem.price = Number(quantity) * Number(cartItem.food.price);
+    this.getCartFromLocalStorage();
   }
 // Clear the cart
   clearCart(){
     this.cart = new Cart();
+    this.getCartFromLocalStorage();
   }
 // Get the cart observable
   getCartObservable(){
