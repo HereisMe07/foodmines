@@ -30,8 +30,12 @@
     </ul>
     <div class="checkout">
         <div>
-            <div class="foods-count">{{cart.totalcount}}</div>
-            <div class="total-price">{{cart.totalprice | currency}}</div>
+            <div class="foods-count">
+                {{cart.totalcount}}
+            </div>
+            <div class="total-price">
+                {{cart.totalprice | currency}}
+            </div>
         </div>
 
         <a routerLink="/checkout">Proceed to checkout</a>
